@@ -1,0 +1,185 @@
+ <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+  <h2>Our Gallery</h2>
+  <div class="gallery-container">
+    <!-- Replace these with your actual images -->
+    <div class="gallery-item">
+      <img src="DCI 1.jpg" alt="Event photo 1" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 2.jpg" alt="Event photo 1" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="DCI 3.jpg" alt="Event photo 2" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="DCI 4.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+      <div class="gallery-item">
+      <img src="DCI 5.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+      <div class="gallery-item">
+      <img src="dci 6.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+      <div class="gallery-item">
+      <img src="DCI 7.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 8.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 9.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 10.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 11.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 12.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 13.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 14.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 15.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 16.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+       <div class="gallery-item">
+      <img src="DCI 17.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+       <div class="gallery-item">
+      <img src="DCI 18.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+       <div class="gallery-item">
+      <img src="DCI 19.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+       <div class="gallery-item">
+      <img src="DCI 20.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+       <div class="gallery-item">
+      <img src="DCI 21.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 22.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="dci 23.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 24.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 25.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+        <div class="gallery-item">
+      <img src="DCI 26.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+      <div class="gallery-item">
+      <img src="DCI 27.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+      <div class="gallery-item">
+      <img src="DCI 28.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+      <div class="gallery-item">
+      <img src="DCI 29.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+      <div class="gallery-item">
+      <img src="DCI 30.jpg" alt="Event photo 3" loading="lazy">
+    </div>
+    <!-- Add more items as needed -->
+    <!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <div class="lightbox-content">
+        <div class="lightbox-nav">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+        <img class="lightbox-img" id="lightbox-img">
+        <div class="caption" id="caption"></div>
+    </div>
+</div>
+<script>
+// Lightbox functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close-lightbox');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    
+    // Get all gallery images
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    let currentIndex = 0;
+    
+    // Open lightbox when image is clicked
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    });
+    
+    // Close lightbox
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close when clicking outside image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Navigation
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        updateLightbox();
+    });
+    
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        updateLightbox();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                updateLightbox();
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                updateLightbox();
+            }
+        }
+    });
+    
+    function updateLightbox() {
+        const imgSrc = galleryItems[currentIndex].src;
+        const imgAlt = galleryItems[currentIndex].alt;
+        lightboxImg.src = imgSrc;
+        caption.textContent = imgAlt;
+    }
+});
+</script>
+  </div>
