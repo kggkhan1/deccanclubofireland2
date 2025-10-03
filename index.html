@@ -1599,47 +1599,61 @@ footer::before {
 </head>
 <body>
     <!-- Responsive Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <div class="navbar-logo-text">Deccan Club <span>Ireland</span></div>
-            </div>
+   <!-- Responsive Navbar -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-logo">
+            <div class="navbar-logo-text">Deccan Club <span>Ireland</span></div>
+        </div>
+        
+        <ul class="navbar-menu" id="navbarMenu">
+            <li class="navbar-item"><a href="#home" class="navbar-link"><i class="fas fa-home"></i> Home</a></li>
             
-            <ul class="navbar-menu">
-                <li class="navbar-item"><a href="#home" class="navbar-link"><i class="fas fa-home"></i> Home</a></li>
-                
-                <li class="navbar-item dropdown">
-                    <a href="#about" class="navbar-link"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="#about" class="dropdown-link"><i class="fas fa-bullseye"></i> Mission & Vision</a></li>
-                        <li class="dropdown-item"><a href="#about" class="dropdown-link"><i class="fas fa-sitemap"></i> Organizational Overview</a></li>
-                        <li class="dropdown-item"><a href="#about" class="dropdown-link"><i class="fas fa-users"></i> Leadership Team</a></li>
-                    </ul>
-                </li>
-                
-                <li class="navbar-item"><a href="#events" class="navbar-link"><i class="fas fa-calendar-alt"></i> Events</a></li>
-                
-                <li class="navbar-item dropdown">
-                    <a href="pages/education.html" class="navbar-link"><i class="fas fa-graduation-cap"></i> Education <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="pages/education.html" class="dropdown-link"><i class="fas fa-school"></i> Primary Education</a></li>
-                        <li class="dropdown-item"><a href="pages/education.html" class="dropdown-link"><i class="fas fa-book"></i> Secondary Education</a></li>
-                        <li class="dropdown-item"><a href="pages/education.html" class="dropdown-link"><i class="fas fa-university"></i> Higher Education</a></li>
-                        <li class="dropdown-item"><a href="education1.html" class="dropdown-link"><i class="fas fa-book-open"></i> Free and Paid Learning Resources</a></li>
-                    </ul>
-                </li>
-                
-                <li class="navbar-item"><a href="gallery.html" class="navbar-link"><i class="fas fa-images"></i> Gallery</a></li>
-                
-                <li class="navbar-item"><a href="magazines.html" class="navbar-link"><i class="fas fa-newspaper"></i> Magazines</a></li>
-                
-                <li class="navbar-item dropdown">
-                    <a href="#prayer-timetable" class="navbar-link"><i class="fa-solid fa-mosque"></i></i>Prayer Timetable<i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="ayah of the day.html" class="dropdown-link"></i> Ayah of the Day</a></li>
-                    
-                    </ul>
-                </li>
+            <li class="navbar-item dropdown">
+                <a href="#about" class="navbar-link"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="#about" class="dropdown-link"><i class="fas fa-bullseye"></i> Mission & Vision</a></li>
+                    <li class="dropdown-item"><a href="#about" class="dropdown-link"><i class="fas fa-sitemap"></i> Organizational Overview</a></li>
+                    <li class="dropdown-item"><a href="#about" class="dropdown-link"><i class="fas fa-users"></i> Leadership Team</a></li>
+                </ul>
+            </li>
+            
+            <li class="navbar-item"><a href="#events" class="navbar-link"><i class="fas fa-calendar-alt"></i> Events</a></li>
+            
+            <li class="navbar-item dropdown">
+                <a href="education.html" class="navbar-link"><i class="fas fa-graduation-cap"></i> Education <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="education.html" class="dropdown-link"><i class="fas fa-school"></i> Primary Education</a></li>
+                    <li class="dropdown-item"><a href="education.html" class="dropdown-link"><i class="fas fa-book"></i> Secondary Education</a></li>
+                    <li class="dropdown-item"><a href="education.html" class="dropdown-link"><i class="fas fa-university"></i> Higher Education</a></li>
+                    <li class="dropdown-item"><a href="education1.html" class="dropdown-link"><i class="fas fa-book-open"></i> Free and Paid Learning Resources</a></li>
+                </ul>
+            </li>
+            
+            <li class="navbar-item"><a href="gallery.html" class="navbar-link"><i class="fas fa-images"></i> Gallery</a></li>
+            
+            <li class="navbar-item"><a href="magazines.html" class="navbar-link"><i class="fas fa-newspaper"></i> Magazines</a></li>
+            
+            <li class="navbar-item dropdown">
+                <a href="#prayer-timetable" class="navbar-link"><i class="fa-solid fa-mosque"></i> Prayer Timetable <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="ayah of the day.html" class="dropdown-link"> Ayah of the Day</a></li>
+                </ul>
+            </li>
+            
+            <!-- Close Button for Mobile -->
+            <li class="navbar-close" id="navbarClose">
+                <i class="fas fa-times"></i>
+            </li>
+        </ul>
+        
+        <div class="navbar-toggle" id="navbarToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
             
             <!-- Mobile Close Button -->
                 <div class="mobile-close-btn" id="mobileCloseBtn">
@@ -2567,6 +2581,7 @@ External links may appear on our site. DCI is not responsible for the privacy pr
     </footer>
 </body>
 </html>
+
 
 
 
